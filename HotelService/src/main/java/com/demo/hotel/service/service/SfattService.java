@@ -8,7 +8,7 @@ public interface SfattService {
 
 	List<Staff> getStaffs();
 	
-	Staff getSfatt(String staffId);
+	Staff getSfatt(Integer staffId);
 	
 	Staff createStaff(Staff s);
 	

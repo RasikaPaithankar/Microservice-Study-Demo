@@ -23,7 +23,7 @@ public class SfattServiceImpl implements SfattService {
 	}
 
 	@Override
-	public Staff getSfatt(String staffId) {
+	public Staff getSfatt(Integer staffId) {
 		Staff staff = repository.findById(staffId).orElseThrow(() -> new StaffNotFoundException("Staff with given id is not found."));
 		return staff;
 	}

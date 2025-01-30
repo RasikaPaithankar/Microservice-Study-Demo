@@ -29,7 +29,7 @@ public class StaffController {
 	}
 	
 	@GetMapping("/{staffId}")
-	public ResponseEntity<Staff> getStaff(@PathVariable String staffId){
+	public ResponseEntity<Staff> getStaff(@PathVariable Integer staffId){
 		Staff staff = staffServiceImpl.getSfatt(staffId);
 		return ResponseEntity.status(HttpStatus.OK).body(staff);
 	}
