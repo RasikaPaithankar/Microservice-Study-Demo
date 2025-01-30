@@ -34,11 +34,11 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private HotelService hotelService;
-	
+
 	@Autowired
 	private RatingService ratingService;
 
-	private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+	private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);	
 
 	@Override
 	public User saveUser(User u) {
@@ -82,8 +82,7 @@ public class UserServiceImpl implements UserService {
 //		Rating[] ratingsForUser = restTemplate.getForObject("http://RATINGSERVICE/ratings/user/" + user.getUserId(),Rating[].class);
 
 		Rating[] ratingsForUser = ratingService.getRating(user.getUserId());
-		
-		
+
 		List<Rating> listOfuser = Arrays.stream(ratingsForUser).toList();
 
 //		set hotel for user
@@ -114,7 +113,4 @@ public class UserServiceImpl implements UserService {
 		return rating;
 	}
 
-	
-	
-	
 }
